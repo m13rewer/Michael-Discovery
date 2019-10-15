@@ -4,12 +4,16 @@ spring:
 server:
    port: 8761
 eureka:
-    instance:
-      hostname: localhost
+    #instance:
+      #hostname: localhost
     client:
       register-with-eureka: false
       fetch-registry: false
       serviceUrl:
-         defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+         defaultZone: http://ec2-3-225-41-251.compute-1.amazonaws.com:8761/eureka
+         #http://${eureka.instance.hostname}:${server.port}/eureka/
+         #defaultZone: http://ec2-3-225-41-251.compute-1.amazonaws.com:8761/eureka
+         #http://ec2-3-225-41-251.compute-1.amazonaws.com:8761
+         
     server:
        enable-self-preservation: false
